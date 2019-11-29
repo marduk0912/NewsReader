@@ -14,13 +14,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var selector: UIPickerView!
     @IBOutlet weak var tablaDeCiudades: UITableView!
     
+    
     var array = [String]()
     var eleccion = String()
+    var direccionWeb = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       
         let ciudad = UIPickerView()
         ciudad.delegate = self
         selectorDeCiudad.inputView = ciudad
@@ -35,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectorDeCiudad.resignFirstResponder()
+        selector.isHidden = false
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -48,6 +51,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectorDeCiudad.text = ciudades[row]
         eleccion = selectorDeCiudad.text!
+        if eleccion != "" {
+            
+            tablaDeCiudades.isHidden = false
+            
+        }
+        
         array = ModeloDatos().ciudadElegida(city: eleccion)
         self.tablaDeCiudades.reloadData()
         self.view.endEditing(true)
@@ -72,12 +81,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
+        direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
+        print(direccionWeb)
+    }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-    }
+        if (segue.identifier == "show"){
+            
+            let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
+            direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
+            let detalle = segue.destination as! VistaDetalle
+            detalle.web = direccionWeb
+            
+        }
+
+        }
+    
+
+}
+
+
+        
+        
+        
+
    
 
     
 
-}
+
 
