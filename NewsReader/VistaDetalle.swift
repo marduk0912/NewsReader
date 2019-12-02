@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class VistaDetalle: UIViewController, WKNavigationDelegate {
+class VistaDetalle: UIViewController {
     
     @IBOutlet weak var webPeriodico: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -35,19 +35,9 @@ class VistaDetalle: UIViewController, WKNavigationDelegate {
         webPeriodico.navigationDelegate = self
         activityIndicator.hidesWhenStopped = true
         
- 
         // Do any additional setup after loading the view.
     }
-    
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        activityIndicator.stopAnimating()
-    }
-    
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        activityIndicator.stopAnimating()
-    }
-    
-    
+   
     @IBAction func back(_ sender: UIBarButtonItem) {
         
         if webPeriodico.canGoBack {
@@ -77,4 +67,16 @@ class VistaDetalle: UIViewController, WKNavigationDelegate {
     }
     
 
+}
+
+extension VistaDetalle: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
+    }
+    
 }

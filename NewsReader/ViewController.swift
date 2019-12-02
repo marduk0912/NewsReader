@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController {
     
     @IBOutlet weak var selectorDeCiudad: UITextField!
     @IBOutlet weak var selector: UIPickerView!
     @IBOutlet weak var tablaDeCiudades: UITableView!
     
-    
+    var ciudades = ["Buenos Aires", "Montevideo", "Asunción", "Santiago", "La Paz", "Lima", "Quito", "Bogotá", "México DF"]
     var array = [String]()
     var eleccion = String()
     var direccionWeb = String()
@@ -29,37 +29,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // Do any additional setup after loading the view.
     }
-    var ciudades = ["Buenos Aires", "Montevideo", "Asunción", "Santiago", "La Paz", "Lima", "Quito", "Bogotá", "México DF"]
-   
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectorDeCiudad.resignFirstResponder()
         selector.isHidden = false
     }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return ciudades.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return ciudades[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectorDeCiudad.text = ciudades[row]
-        eleccion = selectorDeCiudad.text!
-        if eleccion != "" {
-            
-            tablaDeCiudades.isHidden = false
-            
-        }
-        
-        array = ModeloDatos().ciudadElegida(city: eleccion)
-        self.tablaDeCiudades.reloadData()
-        self.view.endEditing(true)
-    }
-    
-   
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "show" {
+            
+            let detalle = segue.destination as! VistaDetalle
+            detalle.web = direccionWeb
+            detalle.titulo = tituloPeriodico
+            
+            }
+        }
+}
+
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -84,20 +73,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "show", sender: self)
         
     }
+}
+
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ciudades.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ciudades[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectorDeCiudad.text = ciudades[row]
+        eleccion = selectorDeCiudad.text!
+        if eleccion != "" {
+            
+            tablaDeCiudades.isHidden = false
+            
+        }
         
-        if segue.identifier == "show" {
-            
-            let detalle = segue.destination as! VistaDetalle
-            detalle.web = direccionWeb
-            detalle.titulo = tituloPeriodico
-            
-        }
-
-        }
+        array = ModeloDatos().ciudadElegida(city: eleccion)
+        self.tablaDeCiudades.reloadData()
+        self.view.endEditing(true)
+    }
     
-
+    
+    
 }
 
 

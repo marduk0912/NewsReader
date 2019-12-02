@@ -76,8 +76,6 @@ class ModeloDatos{
             direccionSeleccionada = bogota[diario]
         case "México DF":
             direccionSeleccionada = mexico[diario]
-        
-       
         default:
             break
         }
