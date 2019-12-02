@@ -31,10 +31,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     var ciudades = ["Buenos Aires", "Montevideo", "Asunción", "Santiago", "La Paz", "Lima", "Quito", "Bogotá", "México DF"]
    
-   
-    
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectorDeCiudad.resignFirstResponder()
         selector.isHidden = false
@@ -89,12 +85,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if (segue.identifier == "show"){
+        if segue.identifier == "show" {
             
             let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
-            direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
+           // direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
             let detalle = segue.destination as! VistaDetalle
-            detalle.web = direccionWeb
+            detalle.city = eleccion
+            detalle.indice = filaSeleccionada!
             
         }
 

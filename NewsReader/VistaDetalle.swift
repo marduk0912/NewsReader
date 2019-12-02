@@ -13,9 +13,10 @@ class VistaDetalle: UIViewController {
     
     @IBOutlet weak var webPeriodico: WKWebView!
     
-    var web: String = String()
+    var city: String = String()
+    var indice: Int = Int()
     
-    
+   
     /*var webView: WKWebView!
     
     override func loadView() {
@@ -28,6 +29,8 @@ class VistaDetalle: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let web = ModeloDatos().webSeleccionada(ciudad: city, diario: indice)
         
         let miUrl = URL(string: web)!
         
