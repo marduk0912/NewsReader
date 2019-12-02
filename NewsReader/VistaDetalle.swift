@@ -9,50 +9,72 @@
 import UIKit
 import WebKit
 
-class VistaDetalle: UIViewController {
+class VistaDetalle: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webPeriodico: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     var web = ""
+    var titulo = ""
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = titulo
+       
         let miUrl = URL(string: web)!
         
         let request: URLRequest = URLRequest(url: miUrl)
         
         webPeriodico.load(request)
+        
+        webPeriodico.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+        webPeriodico.navigationDelegate = self
+        activityIndicator.hidesWhenStopped = true
+        
  
-        self.webPeriodico.addObserver(self, forKeyPath: #keyPath(WKWebView.isLoading), options: .new, context: nil)
-
         // Do any additional setup after loading the view.
     }
     
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
+    }
+    
+    
+    @IBAction func back(_ sender: UIBarButtonItem) {
         
-        if keyPath == "loading" {
-            
-            if webPeriodico.isLoading {
-                
-                activityIndicator.startAnimating()
-                activityIndicator.isHidden = false
-                
-            }else {
-                
-                activityIndicator.stopAnimating()
-                activityIndicator.isHidden = true
-                
-            }
-            
+        if webPeriodico.canGoBack {
+            webPeriodico.goBack()
         }
         
     }
     
+    @IBAction func foward(_ sender: UIBarButtonItem) {
+        
+        if webPeriodico.canGoForward {
+            webPeriodico.goForward()
+        }
+        
+    }
     
-   
+    @IBAction func refresh(_ sender: UIBarButtonItem) {
+        
+        webPeriodico.reload()
+        
+    }
+    
+    @IBAction func stop(_ sender: UIBarButtonItem) {
+        
+        webPeriodico.stopLoading()
+        
+    }
+    
 
 }

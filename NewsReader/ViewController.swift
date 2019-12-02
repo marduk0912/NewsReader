@@ -18,10 +18,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var array = [String]()
     var eleccion = String()
     var direccionWeb = String()
+    var tituloPeriodico = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
        
         let ciudad = UIPickerView()
         ciudad.delegate = self
@@ -80,6 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
         direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
+        tituloPeriodico = array[indexPath.row]
         performSegue(withIdentifier: "show", sender: self)
         
     }
@@ -90,6 +91,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             let detalle = segue.destination as! VistaDetalle
             detalle.web = direccionWeb
+            detalle.titulo = tituloPeriodico
             
         }
 
