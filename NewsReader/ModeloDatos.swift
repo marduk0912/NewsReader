@@ -47,7 +47,7 @@ class ModeloDatos{
        
         var direccionSeleccionada = ""
         
-        let buenosAires = ["https://www.clarin.com", "www.lanacion.com.ar", "www.pagina12.com.ar", "www.ole.com.ar", "www.laprensa.com.ar", "www.diariopopular.com.ar", "www.cronica.com.ar", "www.ambito.com", "www.tiempoar.com.ar"]
+        let buenosAires = ["https://clarin.com", "https://lanacion.com.ar", "https://pagina12.com.ar", "https://ole.com.ar", "https://laprensa.com.ar", "https://diariopopular.com.ar", "https://cronica.com.ar", "https://ambito.com", "https://tiempoar.com.ar"]
         let montevideo = ["www.elpais.com.uy", "www.elobservador.com.uy", "www.republica.com.uy", "www.ladiaria.com.uy", "www.diariolajuventud.com.uy"]
         let asuncion = ["www.ultimahora.com", "www.abc.com.py", "www.cronica.com.py", "www.independiente.com.py", "www.hoy.com.py", "www.5dias.com.py"]
         let santiago = ["www.emol.com", "www.latercera.com", "www.lun.com", "www.publimetro.cl", "www.lasegunda.com"]

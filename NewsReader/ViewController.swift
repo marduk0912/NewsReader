@@ -77,21 +77,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-   /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
         direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
-        print(direccionWeb)
-    }*/
+        performSegue(withIdentifier: "show", sender: self)
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "show" {
             
-            let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
-           // direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
             let detalle = segue.destination as! VistaDetalle
-            detalle.city = eleccion
-            detalle.indice = filaSeleccionada!
+            detalle.web = direccionWeb
             
         }
 

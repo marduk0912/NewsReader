@@ -114,18 +114,26 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yif-Vs-Nx4">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="j0n-sY-10G" firstAttribute="leading" secondItem="PAv-iE-N1m" secondAttribute="leading" id="5gm-dj-5I4"/>
+                            <constraint firstItem="yif-Vs-Nx4" firstAttribute="top" secondItem="op6-Yf-clb" secondAttribute="top" constant="259" id="GRr-gM-gJj"/>
+                            <constraint firstItem="yif-Vs-Nx4" firstAttribute="centerY" secondItem="PAv-iE-N1m" secondAttribute="centerY" id="OJp-gR-NGZ"/>
                             <constraint firstAttribute="trailing" secondItem="j0n-sY-10G" secondAttribute="trailing" id="P5y-3A-nN3"/>
                             <constraint firstItem="j0n-sY-10G" firstAttribute="bottom" secondItem="op6-Yf-clb" secondAttribute="bottom" id="Udj-UY-iOy"/>
+                            <constraint firstItem="yif-Vs-Nx4" firstAttribute="leading" secondItem="op6-Yf-clb" secondAttribute="leading" constant="177" id="YPI-hO-LWZ"/>
                             <constraint firstItem="j0n-sY-10G" firstAttribute="top" secondItem="op6-Yf-clb" secondAttribute="top" id="dUv-cW-VMN"/>
+                            <constraint firstItem="yif-Vs-Nx4" firstAttribute="centerX" secondItem="j0n-sY-10G" secondAttribute="centerX" id="kwf-58-l9b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="op6-Yf-clb"/>
                     </view>
                     <navigationItem key="navigationItem" id="VyV-7e-Njd"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="yif-Vs-Nx4" id="S3f-I8-51E"/>
                         <outlet property="webPeriodico" destination="j0n-sY-10G" id="ovy-QE-f4A"/>
                     </connections>
                 </viewController>
