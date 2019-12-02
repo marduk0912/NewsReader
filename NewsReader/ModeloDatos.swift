@@ -29,7 +29,7 @@ class ModeloDatos{
         case "Lima":
             resultado = ["El Comercio", "Correo", "Perú 21", "La República", "La Razón", "La Primera", "Expreso", "El Peruano"]
         case "Quito":
-            resultado = ["La Hora", "El Comercio", "Últimas Noticias", "Metro Hoy"]
+            resultado = ["La Hora", "El Comercio", "Metro Hoy"]
         case "Bogotá":
             resultado = ["El Tiempo", "El Espectador", "Nuevo Siglo", "El Espacio", "Q' Hubo", "Extra", "ADN", "El Publimetro"]
         case "México DF":
@@ -47,15 +47,15 @@ class ModeloDatos{
        
         var direccionSeleccionada = ""
         
-        let buenosAires = ["https://clarin.com", "https://lanacion.com.ar", "https://pagina12.com.ar", "https://ole.com.ar", "https://laprensa.com.ar", "https://diariopopular.com.ar", "https://cronica.com.ar", "https://ambito.com", "https://tiempoar.com.ar"]
+        let buenosAires = ["https://clarin.com", "https://lanacion.com.ar", "https://pagina12.com.ar", "https://ole.com.ar", "http://laprensa.com.ar", "https://diariopopular.com.ar", "https://cronica.com.ar", "https://ambito.com", "https://tiempoar.com.ar"]
         let montevideo = ["https://elpais.com.uy", "https://elobservador.com.uy", "https://republica.com.uy", "https://ladiaria.com.uy", "https://www.diariolajuventud.com"]
-        let asuncion = ["https://ultimahora.com", "https://abc.com.py", "https://cronica.com.py", "https://independiente.com.py", "https://hoy.com.py", "https://5dias.com.py"]
-        let santiago = ["https://emol.com", "https://latercera.com", "https://lun.com", "https://publimetro.cl", "https://lasegunda.com"]
-        let lapaz = ["https://eldiario.net", "https://la-razon.com", "https://jornada.com.bo", "https://cambio.bo", "https://paginasiete.bo", "https://elalteno.com.bo"]
-        let lima = ["https://elcomercio.pe", "https://diariocorreo.pe", "https://peru21.pe", "https://larepublica.pe", "https://larazon.pe", "https://laprimera.pe", "https://expreso.com.pe", "https://elperuano.com.pe"]
-        let quito = ["htpps://lahora.com.ec", "https://elcomercio.com", "https://ultimasnoticias.com", "https://metroecuador.com.ec"]
-        let bogota = ["https://eltiempo.com", "https://elespectador.com", "https://elnuevosiglo.com.co", "https://elespacio.net.co", "https://qhubo.com", "https://extra.com.co", "https://diarioadn.co", "https://publimetro.co"]
-        let mexico = ["https://reforma.com", "https://la-prensa.com.mx", "https://eluniversal.com.mx", "https://elgrafico.mx", "https://capitalmexico.com.mx", "https://jornada.unam.mx", "https://unomasuno.com.mx", "https://milenio.com", "https://cronica.com.mx", "https://razon.com.mx", "https://impacto.mx"]
+        let asuncion = ["https://ultimahora.com", "https://abc.com.py", "http://cronica.com.py", "https://independiente.com.py", "https://hoy.com.py", "https://5dias.com.py"]
+        let santiago = ["http://emol.com", "https://latercera.com", "http://lun.com", "https://publimetro.cl", "https://digital.lasegunda.com"]
+        let lapaz = ["https://eldiario.net", "https://la-razon.com", "https://jornada.com.bo", "http://cambio.bo", "https://paginasiete.bo", "http://elalteno.com.bo"]
+        let lima = ["https://elcomercio.pe", "https://diariocorreo.pe", "https://peru21.pe", "https://larepublica.pe", "https://larazon.pe", "https://laprimera.pe", "https://expreso.com.pe", "https://elperuano.pe"]
+        let quito = ["https://www.lahora.com.ec", "https://www.elcomercio.com", "https://www.metroecuador.com.ec"]
+        let bogota = ["https://eltiempo.com", "https://elespectador.com", "https://elnuevosiglo.com.co", "https://elespacio.net.co", "https://qhubo.com", "https://extra.com.co", "http://diarioadn.co", "https://publimetro.co"]
+        let mexico = ["https://reforma.com", "https://la-prensa.com.mx", "https://eluniversal.com.mx", "https://elgrafico.mx", "https://capitalmexico.com.mx", "https://www.jornada.com.mx/ultimas", "https://unomasuno.com.mx", "https://milenio.com", "https://cronica.com.mx", "https://www.razon.com.mx", "https://impacto.mx"]
         
         switch ciudad {
         case "Buenos Aires":
