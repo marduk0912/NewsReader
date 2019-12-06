@@ -43,6 +43,8 @@ class VistaDetalle: UIViewController {
         
         if webPeriodico.canGoBack {
             webPeriodico.goBack()
+            activityIndicator.startAnimating()
+            activityIndicator.hidesWhenStopped = true
         }
         
     }
@@ -51,6 +53,8 @@ class VistaDetalle: UIViewController {
         
         if webPeriodico.canGoForward {
             webPeriodico.goForward()
+            activityIndicator.startAnimating()
+            activityIndicator.hidesWhenStopped = true
         }
         
     }
@@ -58,12 +62,16 @@ class VistaDetalle: UIViewController {
     @IBAction func refresh(_ sender: UIBarButtonItem) {
         
         webPeriodico.reload()
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         
     }
     
     @IBAction func stop(_ sender: UIBarButtonItem) {
         
         webPeriodico.stopLoading()
+        activityIndicator.stopAnimating()
+        activityIndicator.hidesWhenStopped = true
         
     }
     

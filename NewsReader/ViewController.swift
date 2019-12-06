@@ -76,6 +76,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
         direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
         tituloPeriodico = array[indexPath.row]
+        selectorDeCiudad.resignFirstResponder()
         performSegue(withIdentifier: "show", sender: self)
         
         

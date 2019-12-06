@@ -33,8 +33,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                             </imageView>
                             <tableView hidden="YES" clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xSS-So-ugl">
-                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="556" id="ihR-jN-ZSb"/>
+                                </constraints>
                                 <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -55,31 +58,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gqP-5z-r3p"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seleccione una Ciudad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="03H-1k-UHg">
-                                <rect key="frame" x="0.0" y="87" width="375" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="wUR-D1-RxC"/>
-                                </constraints>
+                            <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar Ciudad  🔎" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="He0-md-LTc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="39"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="35"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zGm-rF-1Iy" firstAttribute="bottom" secondItem="xSS-So-ugl" secondAttribute="bottom" constant="-44" id="3KS-j2-mn4"/>
                             <constraint firstAttribute="trailing" secondItem="Sge-pR-G34" secondAttribute="trailing" id="3Zj-y3-GXn"/>
-                            <constraint firstItem="Sge-pR-G34" firstAttribute="leading" secondItem="03H-1k-UHg" secondAttribute="leading" id="4BL-bs-5W4"/>
+                            <constraint firstItem="zGm-rF-1Iy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8IV-aT-6Zj"/>
+                            <constraint firstItem="zGm-rF-1Iy" firstAttribute="trailing" secondItem="xSS-So-ugl" secondAttribute="trailing" id="Bya-ut-Q5g"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="top" secondItem="He0-md-LTc" secondAttribute="bottom" constant="8" id="Efd-1r-t4q"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="leading" secondItem="He0-md-LTc" secondAttribute="leading" id="Fnq-CA-2DX"/>
+                            <constraint firstAttribute="bottom" secondItem="xSS-So-ugl" secondAttribute="bottom" id="Gc3-SJ-Bfk"/>
                             <constraint firstItem="Sge-pR-G34" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HNT-fU-cz2"/>
                             <constraint firstItem="Sge-pR-G34" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HoM-A1-MUQ"/>
-                            <constraint firstItem="03H-1k-UHg" firstAttribute="leading" secondItem="zGm-rF-1Iy" secondAttribute="leading" id="SXl-8I-GaR"/>
-                            <constraint firstItem="Sge-pR-G34" firstAttribute="trailing" secondItem="03H-1k-UHg" secondAttribute="trailing" id="ToU-ff-nKN"/>
-                            <constraint firstItem="xSS-So-ugl" firstAttribute="leading" secondItem="zGm-rF-1Iy" secondAttribute="leading" id="UXL-Cn-MVV"/>
-                            <constraint firstItem="03H-1k-UHg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="Xan-BJ-Wzj"/>
-                            <constraint firstItem="xSS-So-ugl" firstAttribute="trailing" secondItem="zGm-rF-1Iy" secondAttribute="trailing" id="buT-BW-fc7"/>
-                            <constraint firstItem="xSS-So-ugl" firstAttribute="top" secondItem="03H-1k-UHg" secondAttribute="bottom" constant="28" id="gP7-E2-J3a"/>
-                            <constraint firstAttribute="bottom" secondItem="xSS-So-ugl" secondAttribute="bottom" id="lga-NL-Hpr"/>
-                            <constraint firstItem="03H-1k-UHg" firstAttribute="trailing" secondItem="xSS-So-ugl" secondAttribute="trailing" id="m42-Fs-kYW"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="trailing" secondItem="Sge-pR-G34" secondAttribute="trailing" id="Kk2-99-H7t"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="leading" secondItem="Sge-pR-G34" secondAttribute="leading" id="Oe6-w4-QCH"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="trailing" secondItem="He0-md-LTc" secondAttribute="trailing" id="YvS-6n-aVx"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="leading" secondItem="zGm-rF-1Iy" secondAttribute="leading" id="n6a-Bs-amA"/>
                             <constraint firstItem="Sge-pR-G34" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qAY-fs-WwM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -90,7 +89,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="selector" destination="zGm-rF-1Iy" id="I7i-G9-GSH"/>
-                        <outlet property="selectorDeCiudad" destination="03H-1k-UHg" id="lTZ-np-EIb"/>
+                        <outlet property="selectorDeCiudad" destination="He0-md-LTc" id="Ru0-PF-eep"/>
                         <outlet property="tablaDeCiudades" destination="xSS-So-ugl" id="jb3-7k-WiC"/>
                     </connections>
                 </viewController>
