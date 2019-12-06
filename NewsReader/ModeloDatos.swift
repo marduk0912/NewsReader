@@ -13,27 +13,26 @@ class ModeloDatos{
     func ciudadElegida(city: String) -> [String] {
         
         var resultado = [String]()
-        
-        
+      
         switch city {
         case "Buenos Aires":
-            resultado = ["Clarín", "La Nación", "Página 12", "Olé", "La Prensa", "Diario Popular", "Cronica", "Ambito Financiero", "Tiempo Argentino"]
+            resultado = ["Clarín", "La Nación", "Página 12", "Olé", "La Prensa Argentina", "Diario Popular Argentina", "Crónica Argrntina", "Ambito Financiero", "Tiempo Argentino"]
         case "Montevideo":
-            resultado = ["El País", "El Observador", "La República", "La Diaria", "La Juventud"]
+            resultado = ["El País", "El Observador", "La República Uruguay", "La Diaria", "La Juventud"]
         case "Asunción":
-            resultado = ["Última Hora", "ABC Color", "Crónica", "El Independiente", "Diario Popular", "5 Días"]
+            resultado = ["Última Hora", "ABC Color", "Crónica Paraguay", "El Independiente", "Diario Popular Paraguay", "5 Días"]
         case "Santiago":
-            resultado = ["El Mercurio", "La Tercera", "Las Últimas Noticias", "Publimetro", "La Segunda"]
+            resultado = ["El Mercurio", "La Tercera", "Las Últimas Noticias", "Publimetro Chile", "La Segunda"]
         case "La Paz":
-            resultado = ["El Diario", "La Razón", "Jornada", "Cambio", "Página Siete", "El Alteño"]
+            resultado = ["El Diario", "La Razón Bolivia", "Jornada", "Cambio", "Página Siete", "El Alteño"]
         case "Lima":
-            resultado = ["El Comercio", "Correo", "Perú 21", "La República", "La Razón", "La Primera", "Expreso", "El Peruano"]
+            resultado = ["El Comercio", "Correo", "Perú 21", "La República Perú", "La Razón Perú", "La Primera", "Expreso", "El Peruano"]
         case "Quito":
-            resultado = ["La Hora", "El Comercio", "Metro Hoy"]
+            resultado = ["La Hora", "El Comercio Ecuador", "Metro Hoy"]
         case "Bogotá":
-            resultado = ["El Tiempo", "El Espectador", "Nuevo Siglo", "El Espacio", "Q' Hubo", "Extra", "ADN", "El Publimetro"]
+            resultado = ["El Tiempo", "El Espectador", "Nuevo Siglo", "El Espacio", "Q' Hubo", "Extra", "ADN", "El Publimetro Colombia"]
         case "México DF":
-            resultado = ["Reforma", "La Prensa", "El Universal", "El Gráfico", "Capital De México", "La Jornada", "Uno Mas Uno", "El Milenio", "La Crónica de Hoy", "La Razón", "El Impacto"]
+            resultado = ["Reforma", "La Prensa México", "El Universal", "El Gráfico", "Capital De México", "La Jornada", "Uno Mas Uno", "El Milenio", "La Crónica de Hoy", "La Razón México", "El Impacto"]
         default:
             break
         }

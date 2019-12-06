@@ -18,32 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DiarioPeriodico-541x311-800x500_c" translatesAutoresizingMaskIntoConstraints="NO" id="Sge-pR-G34">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione una Ciudad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0Y-dV-gTu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <pickerView hidden="YES" contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="zGm-rF-1Iy">
+                                <rect key="frame" x="0.0" y="505" width="375" height="118"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="AZP-19-FhH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGm-rF-1Iy">
-                                <rect key="frame" x="0.0" y="505" width="375" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="GaE-KA-3OO"/>
+                                    <constraint firstAttribute="height" constant="118" id="Vsz-J6-3te"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="0Ju-xd-lg0"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="pY9-Cy-Dlw"/>
                                 </connections>
                             </pickerView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xSS-So-ugl">
-                                <rect key="frame" x="0.0" y="145" width="375" height="522"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Sge-pR-G34">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <tableView hidden="YES" clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xSS-So-ugl">
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="kLw-Rd-ree">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -62,37 +55,38 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gqP-5z-r3p"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Toque para ingresar ciudad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="03H-1k-UHg">
-                                <rect key="frame" x="0.0" y="107" width="375" height="30"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seleccione una Ciudad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="03H-1k-UHg">
+                                <rect key="frame" x="0.0" y="87" width="375" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="wUR-D1-RxC"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xSS-So-ugl" firstAttribute="trailing" secondItem="h0Y-dV-gTu" secondAttribute="trailing" id="9Hf-AV-YKm"/>
-                            <constraint firstItem="Sge-pR-G34" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="A3N-C3-kJd"/>
-                            <constraint firstItem="Sge-pR-G34" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DLT-oh-Mjh"/>
-                            <constraint firstItem="xSS-So-ugl" firstAttribute="bottom" secondItem="zGm-rF-1Iy" secondAttribute="bottom" id="I2s-Ru-wEm"/>
-                            <constraint firstItem="h0Y-dV-gTu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K7v-3p-oaF"/>
-                            <constraint firstItem="03H-1k-UHg" firstAttribute="leading" secondItem="zGm-rF-1Iy" secondAttribute="leading" id="OJq-Ut-LbS"/>
-                            <constraint firstItem="h0Y-dV-gTu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S9u-sP-jWU"/>
-                            <constraint firstItem="Sge-pR-G34" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="czw-bh-Xhk"/>
-                            <constraint firstItem="03H-1k-UHg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zGm-rF-1Iy" secondAttribute="trailing" id="eNz-BT-zGy"/>
-                            <constraint firstItem="xSS-So-ugl" firstAttribute="leading" secondItem="zGm-rF-1Iy" secondAttribute="leading" id="ff9-xd-fmb"/>
-                            <constraint firstItem="Sge-pR-G34" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gE3-ur-owU"/>
-                            <constraint firstAttribute="trailing" secondItem="h0Y-dV-gTu" secondAttribute="trailing" id="o6i-T9-aoZ"/>
-                            <constraint firstAttribute="bottom" secondItem="xSS-So-ugl" secondAttribute="bottom" id="odj-HL-IaT"/>
-                            <constraint firstItem="03H-1k-UHg" firstAttribute="top" secondItem="h0Y-dV-gTu" secondAttribute="bottom" constant="8" symbolic="YES" id="ooZ-tn-7CH"/>
-                            <constraint firstItem="xSS-So-ugl" firstAttribute="top" secondItem="03H-1k-UHg" secondAttribute="bottom" constant="8" symbolic="YES" id="p5e-x0-drg"/>
-                            <constraint firstItem="xSS-So-ugl" firstAttribute="trailing" secondItem="zGm-rF-1Iy" secondAttribute="trailing" id="r6K-cV-5Dt"/>
-                            <constraint firstItem="h0Y-dV-gTu" firstAttribute="leading" secondItem="03H-1k-UHg" secondAttribute="leading" id="zVM-sa-EmY"/>
+                            <constraint firstItem="zGm-rF-1Iy" firstAttribute="bottom" secondItem="xSS-So-ugl" secondAttribute="bottom" constant="-44" id="3KS-j2-mn4"/>
+                            <constraint firstAttribute="trailing" secondItem="Sge-pR-G34" secondAttribute="trailing" id="3Zj-y3-GXn"/>
+                            <constraint firstItem="Sge-pR-G34" firstAttribute="leading" secondItem="03H-1k-UHg" secondAttribute="leading" id="4BL-bs-5W4"/>
+                            <constraint firstItem="Sge-pR-G34" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HNT-fU-cz2"/>
+                            <constraint firstItem="Sge-pR-G34" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HoM-A1-MUQ"/>
+                            <constraint firstItem="03H-1k-UHg" firstAttribute="leading" secondItem="zGm-rF-1Iy" secondAttribute="leading" id="SXl-8I-GaR"/>
+                            <constraint firstItem="Sge-pR-G34" firstAttribute="trailing" secondItem="03H-1k-UHg" secondAttribute="trailing" id="ToU-ff-nKN"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="leading" secondItem="zGm-rF-1Iy" secondAttribute="leading" id="UXL-Cn-MVV"/>
+                            <constraint firstItem="03H-1k-UHg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="Xan-BJ-Wzj"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="trailing" secondItem="zGm-rF-1Iy" secondAttribute="trailing" id="buT-BW-fc7"/>
+                            <constraint firstItem="xSS-So-ugl" firstAttribute="top" secondItem="03H-1k-UHg" secondAttribute="bottom" constant="28" id="gP7-E2-J3a"/>
+                            <constraint firstAttribute="bottom" secondItem="xSS-So-ugl" secondAttribute="bottom" id="lga-NL-Hpr"/>
+                            <constraint firstItem="03H-1k-UHg" firstAttribute="trailing" secondItem="xSS-So-ugl" secondAttribute="trailing" id="m42-Fs-kYW"/>
+                            <constraint firstItem="Sge-pR-G34" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qAY-fs-WwM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="News Reader" id="ikp-4k-heH"/>
+                    <navigationItem key="navigationItem" title="News Reader" id="ikp-4k-heH">
+                        <barButtonItem key="backBarButtonItem" title="Inicio" id="hrV-3r-Ebc"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="selector" destination="zGm-rF-1Iy" id="I7i-G9-GSH"/>
@@ -132,11 +126,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="j0n-sY-10G" firstAttribute="top" secondItem="PAv-iE-N1m" secondAttribute="top" constant="64" id="62N-3D-PfZ"/>
+                            <constraint firstItem="yif-Vs-Nx4" firstAttribute="centerX" secondItem="PAv-iE-N1m" secondAttribute="centerX" id="9bB-qc-Lsq"/>
                             <constraint firstAttribute="bottom" secondItem="j0n-sY-10G" secondAttribute="bottom" id="EiS-N9-dU1"/>
                             <constraint firstAttribute="trailing" secondItem="j0n-sY-10G" secondAttribute="trailing" id="Vla-ul-egz"/>
-                            <constraint firstItem="yif-Vs-Nx4" firstAttribute="centerX" secondItem="j0n-sY-10G" secondAttribute="centerX" id="XsW-Ib-GWQ"/>
-                            <constraint firstItem="yif-Vs-Nx4" firstAttribute="top" secondItem="op6-Yf-clb" secondAttribute="top" constant="251" id="abp-Hb-JX7"/>
                             <constraint firstItem="j0n-sY-10G" firstAttribute="leading" secondItem="PAv-iE-N1m" secondAttribute="leading" id="cCT-xX-Mx0"/>
+                            <constraint firstItem="yif-Vs-Nx4" firstAttribute="centerY" secondItem="PAv-iE-N1m" secondAttribute="centerY" id="dea-ZP-NHT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="op6-Yf-clb"/>
                     </view>
@@ -164,7 +158,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Title" id="e9M-f4-qUL">
-                        <barButtonItem key="backBarButtonItem" title="News Reader" id="q2k-Xb-wIr"/>
+                        <barButtonItem key="backBarButtonItem" title="Inicio" id="q2k-Xb-wIr"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -187,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LWu-vu-ids">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LWu-vu-ids">
                         <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
@@ -201,6 +195,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DiarioPeriodico-541x311-800x500_c" width="400" height="250"/>
+        <image name="background" width="400" height="250"/>
     </resources>
 </document>

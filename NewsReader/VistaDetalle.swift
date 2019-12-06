@@ -22,6 +22,7 @@ class VistaDetalle: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = titulo
+        self.navigationItem.backBarButtonItem?.title = "Inicio"
        
         let miUrl = URL(string: web)!
         
@@ -71,7 +72,7 @@ class VistaDetalle: UIViewController {
 
 extension VistaDetalle: WKNavigationDelegate {
     
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
     }
     
