@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var selector: UIPickerView!
     @IBOutlet weak var tablaDeCiudades: UITableView!
     
-    var ciudades = ["Buenos Aires", "Montevideo", "Asunción", "Santiago", "La Paz", "Lima", "Quito", "Bogotá", "México DF"]
+    var ciudades = ["Buenos Aires", "Montevideo", "Asunción", "Santiago", "La Paz", "Lima", "Quito", "Bogotá", "México DF", "Caracas",  "La Habana"]
     var array = [String]()
     var eleccion = String()
     var direccionWeb = String()
@@ -30,9 +30,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isToolbarHidden = true
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectorDeCiudad.resignFirstResponder()
         selector.isHidden = false
+  
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,13 +95,13 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+   
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return ciudades.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return ciudades[row]
     }
-    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectorDeCiudad.text = ciudades[row]

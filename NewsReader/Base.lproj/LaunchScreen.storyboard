@@ -13,11 +13,22 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="9o9-6g-MZK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082381630080558862" green="0.071569081511219976" blue="0.12803378807106602" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9o9-6g-MZK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Sxc-rM-l4R"/>
+                            <constraint firstAttribute="trailing" secondItem="9o9-6g-MZK" secondAttribute="trailing" id="kPG-lz-Z9y"/>
+                            <constraint firstItem="9o9-6g-MZK" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="lLP-fw-gzF"/>
+                            <constraint firstAttribute="bottom" secondItem="9o9-6g-MZK" secondAttribute="bottom" id="oVe-nh-CDs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +37,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="512" height="512"/>
+    </resources>
 </document>

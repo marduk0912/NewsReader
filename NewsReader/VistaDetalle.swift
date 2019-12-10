@@ -22,7 +22,6 @@ class VistaDetalle: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = titulo
-        self.navigationItem.backBarButtonItem?.title = "Inicio"
        
         let miUrl = URL(string: web)!
         
@@ -35,6 +34,8 @@ class VistaDetalle: UIViewController {
         
         webPeriodico.navigationDelegate = self
         activityIndicator.hidesWhenStopped = true
+        
+        navigationController?.isToolbarHidden = false
         
         // Do any additional setup after loading the view.
     }
