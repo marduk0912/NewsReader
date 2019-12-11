@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var eleccion = String()
     var direccionWeb = String()
     var tituloPeriodico = String()
+    var eleccionAnterior = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
         let ciudad = UIPickerView()
         ciudad.delegate = self
         ciudad.dataSource = self
+        ciudad.backgroundColor = .groupTableViewBackground
         selectorDeCiudad.inputView = ciudad
         
     }
@@ -44,10 +46,9 @@ class ViewController: UIViewController {
         let toolbar = UIToolbar()
         toolbar.barStyle = UIBarStyle.default
         toolbar.isTranslucent = false
-        toolbar.tintColor = .black
+        toolbar.tintColor = .blue
         let espacio = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let botonHecho = UIBarButtonItem(title: "Hecho", style: .plain, target: self, action: #selector(self.ocultarTeclado))
-        
+        let botonHecho = UIBarButtonItem(title: "Aceptar", style: .plain, target: self, action: #selector(self.ocultarTeclado))
         toolbar.isTranslucent = true
         toolbar.setItems([espacio, botonHecho], animated: false)
         toolbar.isUserInteractionEnabled = true
@@ -61,7 +62,7 @@ class ViewController: UIViewController {
         if eleccion != "" {
             tablaDeCiudades.isHidden = false
         }
-        
+        eleccionAnterior = eleccion
         array = ModeloDatos().ciudadElegida(city: eleccion)
         self.tablaDeCiudades.reloadData()
         view.endEditing(true)
@@ -120,6 +121,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
         direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
         tituloPeriodico = array[indexPath.row]
+        selectorDeCiudad.text = eleccionAnterior
         selectorDeCiudad.resignFirstResponder()
         performSegue(withIdentifier: "show", sender: self)
         
