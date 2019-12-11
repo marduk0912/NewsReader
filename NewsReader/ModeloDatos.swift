@@ -36,7 +36,7 @@ class ModeloDatos{
         case "La Habana":
             resultado = ["Granma", "Juventud Revelde"]
         case "Caracas":
-            resultado = ["Últimas Noticias", "El Universal Venezuela", "El Nacional", "2001", "Correo del Orinoco", "El Nuevo Pais", "Ciudad CCS", "Meridiano", "Lider"]
+            resultado = ["Últimas Noticias", "El Universal Venezuela", "El Nacional", "2001", "El Nuevo Pais", "Ciudad CCS", "Meridiano", "Lider"]
         default:
             break
         }
@@ -51,16 +51,26 @@ class ModeloDatos{
         var direccionSeleccionada = ""
         
         let buenosAires = ["https://clarin.com", "https://lanacion.com.ar", "https://pagina12.com.ar", "https://ole.com.ar", "https://www.infobae.com","https://www.perfil.com", "https://www.minutouno.com", "https://tn.com.ar", "http://www.telam.com.ar", "http://laprensa.com.ar", "https://diariopopular.com.ar", "https://cronica.com.ar", "https://ambito.com", "https://tiempoar.com.ar"]
+        
         let montevideo = ["https://elpais.com.uy", "https://elobservador.com.uy", "https://republica.com.uy", "https://ladiaria.com.uy", "https://www.diariolajuventud.com"]
+        
         let asuncion = ["https://ultimahora.com", "https://abc.com.py", "http://cronica.com.py", "https://independiente.com.py", "https://hoy.com.py", "https://5dias.com.py"]
+        
         let santiago = ["http://emol.com", "https://latercera.com", "http://lun.com", "https://publimetro.cl", "https://digital.lasegunda.com", "https://www.lacuarta.com", "http://www.lahora.cl", "http://www.hoyxhoy.cl/", "http://www.diariolabrador.cl"]
+        
         let lapaz = ["https://eldiario.net", "https://la-razon.com", "https://jornada.com.bo", "http://cambio.bo", "https://paginasiete.bo", "http://elalteno.com.bo"]
+        
         let lima = ["https://elcomercio.pe", "https://diariocorreo.pe", "https://peru21.pe", "https://larepublica.pe", "https://larazon.pe", "https://laprimera.pe", "https://expreso.com.pe", "https://elperuano.pe"]
+        
         let quito = ["https://www.lahora.com.ec", "https://www.elcomercio.com", "https://www.metroecuador.com.ec"]
+        
         let bogota = ["https://eltiempo.com", "https://elespectador.com", "https://elnuevosiglo.com.co", "https://elespacio.net.co", "https://qhubo.com", "https://extra.com.co", "http://diarioadn.co", "https://publimetro.co"]
+        
         let mexico = ["https://reforma.com", "https://la-prensa.com.mx", "https://eluniversal.com.mx", "https://elgrafico.mx", "https://capitalmexico.com.mx", "https://www.jornada.com.mx/ultimas", "https://unomasuno.com.mx", "https://milenio.com", "https://cronica.com.mx", "https://www.razon.com.mx", "https://impacto.mx"]
+        
         let habana = ["http://www.granma.cu", "http://www.juventudrebelde.cu"]
-        let caracas = ["http://www.ultimasnoticias.com.ve", "https://www.eluniversal.com", "https://www.elnacional.com", "http://www.2001.com.ve", "http://www.correodelorinoco.gob.ve", "https://elnuevopais.net", "http://www.ciudadccs.info", "http://www.meridiano.com.ve", "http://www.liderendeportes.com"]
+        
+        let caracas = ["http://www.ultimasnoticias.com.ve", "https://www.eluniversal.com", "https://www.elnacional.com", "http://www.2001.com.ve", "https://elnuevopais.net", "http://www.ciudadccs.info", "http://www.meridiano.com.ve", "http://www.liderendeportes.com"]
         
         switch ciudad {
         case "Buenos Aires":
@@ -92,6 +102,5 @@ class ModeloDatos{
         return direccionSeleccionada
 }
     
-
 
 }

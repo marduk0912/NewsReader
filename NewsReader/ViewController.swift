@@ -23,12 +23,50 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let ciudad = UIPickerView()
-        ciudad.delegate = self
-        selectorDeCiudad.inputView = ciudad
-        
+        crearPicker()
+        crearToolBarPicker()
+     
         // Do any additional setup after loading the view.
     }
+    
+    func crearPicker() {
+        
+        let ciudad = UIPickerView()
+        ciudad.delegate = self
+        ciudad.dataSource = self
+        selectorDeCiudad.inputView = ciudad
+        
+    }
+    
+    
+    func crearToolBarPicker() {
+        
+        let toolbar = UIToolbar()
+        toolbar.barStyle = UIBarStyle.default
+        toolbar.isTranslucent = false
+        toolbar.tintColor = .black
+        let espacio = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let botonHecho = UIBarButtonItem(title: "Hecho", style: .plain, target: self, action: #selector(self.ocultarTeclado))
+        
+        toolbar.isTranslucent = true
+        toolbar.setItems([espacio, botonHecho], animated: false)
+        toolbar.isUserInteractionEnabled = true
+        toolbar.sizeToFit()
+        selectorDeCiudad.inputAccessoryView = toolbar
+        
+    }
+    
+    
+    @objc func ocultarTeclado() {
+        if eleccion != "" {
+            tablaDeCiudades.isHidden = false
+        }
+        
+        array = ModeloDatos().ciudadElegida(city: eleccion)
+        self.tablaDeCiudades.reloadData()
+        view.endEditing(true)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isToolbarHidden = true
@@ -104,26 +142,12 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectorDeCiudad.text = ciudades[row]
-        eleccion = selectorDeCiudad.text!
+        eleccion = ciudades[row]
+        selectorDeCiudad.text = eleccion
        
-        if eleccion != "" {
-            tablaDeCiudades.isHidden = false
-        }
-        
-        array = ModeloDatos().ciudadElegida(city: eleccion)
-        self.tablaDeCiudades.reloadData()
-        self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    
-    
+  
 }
 
 
