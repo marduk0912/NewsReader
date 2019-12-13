@@ -85,6 +85,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Diarios de América" id="ikp-4k-heH">
                         <barButtonItem key="backBarButtonItem" title="Salir" id="hrV-3r-Ebc"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="qnJ-kC-mue">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="limpiarPantala:" destination="BYZ-38-t0r" id="nhb-1a-eMQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

@@ -80,6 +80,17 @@ class ViewController: UIViewController {
   
     }
 
+    @IBAction func limpiarPantala(_ sender: Any) {
+        
+        eleccion = ""
+        selectorDeCiudad.text = eleccion
+        tablaDeCiudades.isHidden = true
+        
+    }
+    
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "show" {
