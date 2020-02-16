@@ -14,7 +14,6 @@
 		18CD57DB238C67580077A987 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CD57D9238C67580077A987 /* Main.storyboard */; };
 		18CD57DD238C675D0077A987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CD57DC238C675D0077A987 /* Assets.xcassets */; };
 		18CD57E0238C675D0077A987 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CD57DE238C675D0077A987 /* LaunchScreen.storyboard */; };
-		18CD57EC238C73870077A987 /* VistaDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD57EB238C73870077A987 /* VistaDetalle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		18CD57DC238C675D0077A987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18CD57DF238C675D0077A987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18CD57E1238C675D0077A987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18CD57EB238C73870077A987 /* VistaDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaDetalle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,6 @@
 			children = (
 				18CD57D5238C67580077A987 /* AppDelegate.swift */,
 				18CD57D7238C67580077A987 /* ViewController.swift */,
-				18CD57EB238C73870077A987 /* VistaDetalle.swift */,
 				1821F081238EF7EC000F0A6E /* ModeloDatos.swift */,
 				18CD57D9238C67580077A987 /* Main.storyboard */,
 				18CD57DC238C675D0077A987 /* Assets.xcassets */,
@@ -155,7 +152,6 @@
 			files = (
 				18CD57D8238C67580077A987 /* ViewController.swift in Sources */,
 				18CD57D6238C67580077A987 /* AppDelegate.swift in Sources */,
-				18CD57EC238C73870077A987 /* VistaDetalle.swift in Sources */,
 				1821F082238EF7EC000F0A6E /* ModeloDatos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
