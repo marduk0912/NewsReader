@@ -80,7 +80,7 @@ class ViewController: UIViewController {
   
     }
 
-    @IBAction func limpiarPantala(_ sender: Any) {
+    @IBAction func limpiarPantalla(_ sender: Any) {
         
         eleccion = ""
         selectorDeCiudad.text = eleccion
@@ -88,19 +88,6 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "show" {
-            
-            let detalle = segue.destination as! VistaDetalle
-            detalle.web = direccionWeb
-            detalle.titulo = tituloPeriodico
-            
-            }
-        }
 }
 
 
@@ -131,11 +118,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
        
         let filaSeleccionada = tablaDeCiudades.indexPathForSelectedRow?.row
         direccionWeb = ModeloDatos().webSeleccionada(ciudad: eleccion, diario: filaSeleccionada!)
-        tituloPeriodico = array[indexPath.row]
-        selectorDeCiudad.text = eleccionAnterior
-        selectorDeCiudad.resignFirstResponder()
-        performSegue(withIdentifier: "show", sender: self)
         
+        if let url = URL(string: direccionWeb) {
+            UIApplication.shared.open(url)
+        }
         
     }
 }
