@@ -41,6 +41,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <connections>
+                                            <segue destination="YWt-d3-rCW" kind="show" identifier="show" id="x8w-lc-CyA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -96,6 +99,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="626.39999999999998" y="87.706146926536732"/>
+        </scene>
+        <!--Vista Detalle-->
+        <scene sceneID="hCo-0G-dc2">
+            <objects>
+                <viewController id="YWt-d3-rCW" customClass="VistaDetalle" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MP1-N1-ewe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPo-iO-TpP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rAg-kR-GK5">
+                                <rect key="frame" x="177" y="367" width="21" height="37"/>
+                                <color key="color" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TPo-iO-TpP" firstAttribute="centerX" secondItem="MP1-N1-ewe" secondAttribute="centerX" id="7q3-Jq-shj"/>
+                            <constraint firstItem="TPo-iO-TpP" firstAttribute="top" secondItem="MP1-N1-ewe" secondAttribute="topMargin" constant="-44" id="O94-Fs-paI"/>
+                            <constraint firstItem="TPo-iO-TpP" firstAttribute="centerY" secondItem="MP1-N1-ewe" secondAttribute="centerY" id="UDo-9a-c6K"/>
+                            <constraint firstItem="rAg-kR-GK5" firstAttribute="top" secondItem="82R-fa-jjQ" secondAttribute="top" constant="323" id="ZkF-UB-bON"/>
+                            <constraint firstItem="rAg-kR-GK5" firstAttribute="leading" secondItem="82R-fa-jjQ" secondAttribute="leading" constant="177" id="hAQ-uH-Nf9"/>
+                            <constraint firstItem="rAg-kR-GK5" firstAttribute="centerX" secondItem="TPo-iO-TpP" secondAttribute="centerX" id="jgK-Xa-h4e"/>
+                            <constraint firstItem="TPo-iO-TpP" firstAttribute="leading" secondItem="82R-fa-jjQ" secondAttribute="leading" id="xTw-Wu-P26"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="82R-fa-jjQ"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="rewind" id="1Le-JW-bX8">
+                            <color key="tintColor" red="0.010711258497485681" green="0.088332383981483187" blue="0.67827966370558368" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="back:" destination="YWt-d3-rCW" id="d9o-Ye-g5i"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="fastForward" id="LhR-tX-Aaf">
+                            <color key="tintColor" red="0.010711258499999999" green="0.088332383979999998" blue="0.67827966370000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="foward:" destination="YWt-d3-rCW" id="AwS-g3-yaF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="4tf-wu-cmU"/>
+                        <barButtonItem systemItem="stop" id="0Ib-4a-FXq">
+                            <color key="tintColor" red="0.010711258499999999" green="0.088332383979999998" blue="0.67827966370000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="stop:" destination="YWt-d3-rCW" id="Pok-zR-6k1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="refresh" id="f8N-5e-KJM">
+                            <color key="tintColor" red="0.010711258499999999" green="0.088332383979999998" blue="0.67827966370000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refresh:" destination="YWt-d3-rCW" id="Du0-cU-X6g"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="nJB-6a-q1b"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activity" destination="rAg-kR-GK5" id="RTh-y6-Yh7"/>
+                        <outlet property="webPeriodico" destination="TPo-iO-TpP" id="5cy-PU-c35"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5l-Nn-hAR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567.2" y="90.404797601199405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hHZ-yD-YVa">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1801FD9423FF502400F901E1 /* VistaDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801FD9323FF502400F901E1 /* VistaDetalle.swift */; };
 		1815262D2391E16600E05EC0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1815262C2391E16600E05EC0 /* WebKit.framework */; };
 		1821F082238EF7EC000F0A6E /* ModeloDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821F081238EF7EC000F0A6E /* ModeloDatos.swift */; };
 		18CD57D6238C67580077A987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD57D5238C67580077A987 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1801FD9323FF502400F901E1 /* VistaDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaDetalle.swift; sourceTree = "<group>"; };
 		1815262C2391E16600E05EC0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1821F081238EF7EC000F0A6E /* ModeloDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeloDatos.swift; sourceTree = "<group>"; };
 		18CD57D2238C67580077A987 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 			children = (
 				18CD57D5238C67580077A987 /* AppDelegate.swift */,
 				18CD57D7238C67580077A987 /* ViewController.swift */,
+				1801FD9323FF502400F901E1 /* VistaDetalle.swift */,
 				1821F081238EF7EC000F0A6E /* ModeloDatos.swift */,
 				18CD57D9238C67580077A987 /* Main.storyboard */,
 				18CD57DC238C675D0077A987 /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 				18CD57D8238C67580077A987 /* ViewController.swift in Sources */,
 				18CD57D6238C67580077A987 /* AppDelegate.swift in Sources */,
 				1821F082238EF7EC000F0A6E /* ModeloDatos.swift in Sources */,
+				1801FD9423FF502400F901E1 /* VistaDetalle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CS2C67329G;
 				INFOPLIST_FILE = NewsReader/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,7 +324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CS2C67329G;
 				INFOPLIST_FILE = NewsReader/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
